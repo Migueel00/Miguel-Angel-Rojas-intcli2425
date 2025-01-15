@@ -6,7 +6,7 @@ interface CardProps {
 
 const Card : React.FC<CardProps>  = (potion) => {
     return ( 
-        <div className="w-[18%] h-[38%] ml-1 flex items-center flex-col rounded-md shadow-xl bg-gray-200">
+        <div className="w-1/6 h-[38%] ml-1 flex items-center flex-col rounded-md shadow-xl bg-gray-200">
             <div className="w-full">
                 <img className="object-cover w-full h-56 rounded-md" src={potion.potion.image} alt="Converse sneakers" />
             </div>
