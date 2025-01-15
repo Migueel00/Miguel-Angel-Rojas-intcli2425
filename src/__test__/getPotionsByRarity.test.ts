@@ -1,6 +1,6 @@
 
 import { getPotionsByRarity } from "../helpers/potionHelpers";
-import { filterByLevelDataMock } from "./__mocks__/filterByLevelMock";
+import { getPotionsByRarityMock } from "./__mocks__/getPotionsByRarityMock";
 
 describe('Test the function filterByLevel', () => {
 
@@ -8,7 +8,7 @@ describe('Test the function filterByLevel', () => {
         // Assign
 
         // Act
-        const filteredPotions = getPotionsByRarity(filterByLevelDataMock, "legendary");
+        const filteredPotions = getPotionsByRarity(getPotionsByRarityMock, "legendary");
 
         // Assert
         expect(filteredPotions.length).toBe(3);

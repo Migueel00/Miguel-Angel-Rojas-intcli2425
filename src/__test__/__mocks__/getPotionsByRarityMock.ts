@@ -1,6 +1,6 @@
 import { Potion } from "../../types/Potion"
 
-export const filterByLevelDataMock: Potion[] = [
+export const getPotionsByRarityMock : Potion[] = [
     {
         id: "potion_001",
         name: "Elixir of Eternal Flame",

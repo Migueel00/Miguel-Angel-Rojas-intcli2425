@@ -1,18 +1,30 @@
 import { Potion } from "../types/Potion";
 
-
-// Devuelve array de pociones nivel menor o igual al especificado
+// Returns array of potions level less than or equal to the specified level.
 export function FilterByLevelRequirement(potions : Potion[], level : number) : Potion[]{
     return potions.filter(potion => potion.usage.restrictions.levelRequirement <= level);
 }
 
-// Devuelve todas las pociones que tiene una rareza especifica
+// Returns all potions that have a specific rarity.
 export function getPotionsByRarity(potions: Potion[], rarity: string) : Potion[]{ 
     return potions.filter(potion => potion.rarity === rarity);
 }   
 
-// Devuelve el array con los nombres de los ingredientes
+// Returns the array with the names of the ingredients
 export function listIngredients(potion: Potion) : string[]{
     return potion.ingredients.map(ingredient => ingredient.name);
+}
+
+// Return array of potions with same secondary as effect
+export function findPotionByEffect(potions : Potion[], effect : string) : Potion[]{
+    const newArray : Potion[] = [];
+
+    potions.map(potion => potion.effects.secondary.map(secondary => {
+        if(secondary.attribute === effect){
+            newArray.push(potion);
+        }
+    }));
+
+    return newArray;
 }
 
