@@ -12,12 +12,17 @@ const Slider  = ({setShowingPotions, potions} : SliderProps) => {
     const [values, setValues] = useState([0]);
 
     useEffect(() => {
-        setShowingPotions(FilterByLevelRequirement(potions, values[0]));
+
+        if(values[0] > 0){
+            setShowingPotions(FilterByLevelRequirement(potions, values[0]));
+        }else {
+            setShowingPotions(potions);
+        }
     }, [values])
     
     
     return (
-        <div>
+        <div className="w-[40%]">
             <p className="mb-6">Level: {values}</p>
             <Range
 
