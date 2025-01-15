@@ -28,3 +28,17 @@ export function findPotionByEffect(potions : Potion[], effect : string) : Potion
     return newArray;
 }
 
+export function calculateCraftingTime(potions : Potion[]) : number{
+
+    let minutes : number = 0;
+    
+    potions.map(potion => {
+        if(potion.crafting.time.unit === 'hours'){
+            minutes += potion.crafting.time.amount * 60;
+        }else if(potion.crafting.time.unit === 'minutes'){
+            minutes += potion.crafting.time.amount;
+        }
+    });
+
+    return minutes;
+}

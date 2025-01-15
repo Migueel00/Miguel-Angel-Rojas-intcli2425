@@ -1,9 +1,9 @@
 import { listIngredients } from "../helpers/potionHelpers";
 import { filterByLevelDataMock } from "./__mocks__/filterByLevelMock";
 
-describe('Test the function filterByLevel', () => {
+describe('Test the function listIngredients', () => {
 
-    it('Should filter by rarity and return an Array of potions' , () => {
+    it('Should return the array of ingredients name ' , () => {
         // Assign
         const potion = filterByLevelDataMock[0];
 
