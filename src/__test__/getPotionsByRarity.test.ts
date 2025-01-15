@@ -4,7 +4,7 @@ import { filterByLevelDataMock } from "./__mocks__/filterByLevelMock";
 
 describe('Test the function filterByLevel', () => {
 
-    it('Should filter by level and return an Array of potions' , () => {
+    it('Should filter by rarity and return an Array of potions' , () => {
         // Assign
 
         // Act
