@@ -12,6 +12,9 @@ describe('Test the function filterByLevel', () => {
 
         // Assert
         expect(filteredPotions.length).toBe(3);
+        expect(filteredPotions[0].rarity).toBe("legendary");
+        expect(filteredPotions[1].rarity).toBe("legendary");
+        expect(filteredPotions[2].rarity).toBe("legendary");
     });
 });
 

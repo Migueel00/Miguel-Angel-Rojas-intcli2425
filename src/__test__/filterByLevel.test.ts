@@ -12,6 +12,7 @@ describe('Test the function filterByLevel', () => {
 
         // Assert
         expect(filteredPotions.length).toBe(2);
+        filteredPotions.map(potion => expect(potion.usage.restrictions.levelRequirement).toBeLessThan(18));
     });
 });
 

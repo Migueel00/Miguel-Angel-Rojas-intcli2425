@@ -11,6 +11,7 @@ describe('Test the function findPotionByEffect', () => {
 
         // Assert
         expect(filteredPotions.length).toBe(1);
+        expect(filteredPotions[0].effects.secondary[0].attribute).toBe("healthRegeneration");
     });
 });
 
