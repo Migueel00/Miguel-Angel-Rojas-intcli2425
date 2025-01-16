@@ -5,6 +5,8 @@ import { Potion } from './types/Potion'
 import Card from './components/Card'
 import Slider from './components/Slider'
 import RarityFilter from './components/RarityFilter'
+import EffectFilter from './components/EffectFilter'
+import CraftTimeButton from './components/CraftTimeButton'
 
 function App() {
   
@@ -17,9 +19,11 @@ function App() {
           {showingPotions.map(potion =>
             <Card potion={potion}></Card>
           )}
-          <div className='w-[40%] flex flex-row'>
+          <div className='w-[60%] flex flex-row items-center justify-between'>
             <Slider setShowingPotions={setShowingPotions} potions={potions}></Slider>
             <RarityFilter setShowingPotions={setShowingPotions} potions={potions} showingPotions={showingPotions}></RarityFilter>
+            <EffectFilter setShowingPotions={setShowingPotions} potions={potions}></EffectFilter>
+            <CraftTimeButton showingPotions={showingPotions}></CraftTimeButton>
           </div>
         </div>
       </div>
