@@ -28,7 +28,7 @@ const Slider  = ({setShowingPotions, potions} : SliderProps) => {
 
                 step={1}
                 min={0}
-                max={100}
+                max={50}
                 values={values}
                 onChange={(values) => setValues(values)}
                 renderTrack={({ props, children }) => (

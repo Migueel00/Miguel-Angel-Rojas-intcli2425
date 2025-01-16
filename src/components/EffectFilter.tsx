@@ -22,7 +22,6 @@ const EffectFilter = ({setShowingPotions, potions} : RarityFilterProps) => {
     return (
         <div className="w-[20%]">
             <input type="text" className="border-2 border-black ml-2" onChange={changeHandler}></input>
-            <p>El texto insertado {effect}</p>
         </div>
     );
 }

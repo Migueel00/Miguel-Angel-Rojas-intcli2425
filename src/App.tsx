@@ -25,7 +25,7 @@ function App() {
           )}
         </div>
 
-        <div className='w-[70%] flex flex-row items-center justify-between mt-5'>
+        <div className='w-[70%] flex flex-row items-center justify-between mt-5 text-xl font-bold'>
             <Slider setShowingPotions={setShowingPotions} potions={potions}></Slider>
             <RarityFilter setShowingPotions={setShowingPotions} potions={potions} showingPotions={showingPotions}></RarityFilter>
             <EffectFilter setShowingPotions={setShowingPotions} potions={potions}></EffectFilter>

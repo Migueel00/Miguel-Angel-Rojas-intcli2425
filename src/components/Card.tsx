@@ -19,8 +19,8 @@ const Card : React.FC<CardProps>  = (props) => {
             <div className="w-full">
                 <img className="object-cover w-full h-56 rounded-md" src={props.potion.image} alt={props.potion.name} />
             </div>
-            <p className="text-center mt-2 text-orange-400 font-bold">{props.potion.name}</p>
-            <div className="flex flex-row mt-2 text-sm">
+            <p className="text-center mt-2 text-orange-400 font-bold text-[22px]">{props.potion.name}</p>
+            <div className="flex flex-row mt-2 text-[20px] font-bold">
                 <div>
                     <p><span className="font-bold">Rarity:</span> {props.potion.rarity}</p>
                     <p><span className="font-bold">Boss:</span> {props.potion.meta.availability.drop_rate.boss}</p>

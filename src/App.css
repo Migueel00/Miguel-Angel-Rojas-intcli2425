@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'Kaotika';
+    src: url('../src/assets/fonts/KochAltschrift.ttf');
+}
+
+*{
+    font-family: 'Kaotika';
+}
