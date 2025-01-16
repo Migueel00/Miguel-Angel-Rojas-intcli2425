@@ -22,8 +22,8 @@ const RarityFilter = ({setShowingPotions, potions} : RarityFilterProps) => {
         }
     }, [rarity]);
 
-    const handleRarity = (e : any ) => {
-        setRarity(e.target.value);
+    const handleRarity = (e : React.ChangeEvent<HTMLSelectElement> ) => {
+        setRarity(e.currentTarget.value);
     }
 
     return(
