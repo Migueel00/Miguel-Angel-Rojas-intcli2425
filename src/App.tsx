@@ -14,18 +14,19 @@ function App() {
 
   return (
     <>
-      <div className='w-[100%] min-h-screen flex justify-center '>
-        <div className='w-[98%] flex flex-wrap justify-center items-center'>
+      <div className='w-[100%] min-h-screen flex flex-col justify-center items-center'>
+        <div className='w-[90%] flex flex-wrap justify-center items-center '>
           {showingPotions.map(potion =>
             <Card potion={potion}></Card>
           )}
-          <div className='w-[60%] flex flex-row items-center justify-between'>
+        </div>
+
+        <div className='w-[70%] flex flex-row items-center justify-between mt-5'>
             <Slider setShowingPotions={setShowingPotions} potions={potions}></Slider>
             <RarityFilter setShowingPotions={setShowingPotions} potions={potions} showingPotions={showingPotions}></RarityFilter>
             <EffectFilter setShowingPotions={setShowingPotions} potions={potions}></EffectFilter>
             <CraftTimeButton showingPotions={showingPotions}></CraftTimeButton>
           </div>
-        </div>
       </div>
     </>
   )
