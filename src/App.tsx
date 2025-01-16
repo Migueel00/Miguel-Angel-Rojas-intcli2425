@@ -7,17 +7,21 @@ import Slider from './components/Slider'
 import RarityFilter from './components/RarityFilter'
 import EffectFilter from './components/EffectFilter'
 import CraftTimeButton from './components/CraftTimeButton'
+import Modal from './components/Modal'
 
 function App() {
   
   const [showingPotions, setShowingPotions] = useState<Potion[]>(potions);
+  const [modalPotion, setModalPotion] = useState<Potion | null>(null);
+  const [modalVisible, setModalVisible] = useState<boolean>(false);
 
   return (
     <>
+      {modalVisible ? <Modal potion={modalPotion} setModalVisible={setModalVisible}></Modal> : null}  
       <div className='w-[100%] min-h-screen flex flex-col justify-center items-center'>
         <div className='w-[90%] min-h-[720px] flex flex-wrap justify-center items-center'>
           {showingPotions.map(potion =>
-            <Card potion={potion}></Card>
+            <Card potion={potion} setModalVisible={setModalVisible} setModalPotion={setModalPotion}></Card>
           )}
         </div>
 
