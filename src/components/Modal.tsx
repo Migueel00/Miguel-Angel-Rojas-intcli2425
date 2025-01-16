@@ -26,7 +26,7 @@ const Modal : React.FC<ModalProps> = (potion) => {
                 <div className="w-2/6 text-white mt-5">
                     <p className="font-bold text-orange-400 text-[32px]">Ingredients: </p>
                     {potion.potion?.ingredients.map(ingredient => (
-                        <div className="text-lef flex w-[100%] mt-5">
+                        <div className="text-lef flex w-[100%] mt-5 border-2">
                             <div className="flex flex-col w-[180px]">
                                 <p> <span className="text-orange-400">Name: </span> </p> 
                                 <p>{ingredient.name}</p>
