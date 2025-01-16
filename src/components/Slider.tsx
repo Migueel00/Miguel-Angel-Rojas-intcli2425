@@ -1,26 +1,13 @@
-import { Dispatch, SetStateAction, useEffect, useState } from "react"
+import { Dispatch, SetStateAction } from "react"
 import { Range } from "react-range";
-import { Potion } from "../types/Potion";
-import { FilterByLevelRequirement } from "../helpers/potionHelpers";
 
 interface SliderProps {
-    setShowingPotions: Dispatch<SetStateAction<Potion[]>>;
-    potions: Potion[];
+    values: number[],
+    setValues: Dispatch<SetStateAction<number[]>>;
 }
 
-const Slider  = ({setShowingPotions, potions} : SliderProps) => {
-    const [values, setValues] = useState([0]);
+const Slider  = ({values, setValues} : SliderProps) => {
 
-    useEffect(() => {
-
-        if(values[0] > 0){
-            setShowingPotions(FilterByLevelRequirement(potions, values[0]));
-        }else {
-            setShowingPotions(potions);
-        }
-    }, [values])
-    
-    
     return (
         <div className="w-[40%]">
             <p className="mb-6">Level: {values}</p>
@@ -28,7 +15,7 @@ const Slider  = ({setShowingPotions, potions} : SliderProps) => {
 
                 step={1}
                 min={0}
-                max={50}
+                max={100}
                 values={values}
                 onChange={(values) => setValues(values)}
                 renderTrack={({ props, children }) => (

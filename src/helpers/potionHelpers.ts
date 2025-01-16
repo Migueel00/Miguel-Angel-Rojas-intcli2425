@@ -7,7 +7,7 @@ export function FilterByLevelRequirement(potions : Potion[], level : number) : P
 
 // Returns all potions that have a specific rarity.
 export function getPotionsByRarity(potions: Potion[], rarity: string) : Potion[]{ 
-    return potions.filter(potion => potion.rarity === rarity);
+    return rarity !== '' ? potions.filter(potion => potion.rarity === rarity) : potions;
 }   
 
 // Returns the array with the names of the ingredients
@@ -25,7 +25,7 @@ export function findPotionByEffect(potions : Potion[], effect : string) : Potion
         }
     }));
 
-    return newArray;
+    return effect !== '' ? newArray : potions;
 }
 
 export function calculateCraftingTime(potions : Potion[]) : number{

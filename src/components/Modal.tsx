@@ -70,7 +70,7 @@ const Modal : React.FC<ModalProps> = (potion) => {
                 </div> 
             </div>
             <button 
-                className="w-[12%] bg-orange-400 mt-5 rounded-lg h-20 text-[32px]"
+                className="w-[12%] bg-orange-400 rounded-lg h-20 text-[32px] mt-[-10px]"
                 onClick={handleCloseButton}
             >Close</button>
         </div>  

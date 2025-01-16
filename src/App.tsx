@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import { potions } from './data/data'
 import { Potion } from './types/Potion'
@@ -8,12 +8,21 @@ import RarityFilter from './components/RarityFilter'
 import EffectFilter from './components/EffectFilter'
 import CraftTimeButton from './components/CraftTimeButton'
 import Modal from './components/Modal'
+import { FilterByLevelRequirement, getPotionsByRarity, findPotionByEffect } from './helpers/potionHelpers'
 
 function App() {
   
   const [showingPotions, setShowingPotions] = useState<Potion[]>(potions);
   const [modalPotion, setModalPotion] = useState<Potion | null>(null);
   const [modalVisible, setModalVisible] = useState<boolean>(false);
+  const [values, setValues] = useState([0]);
+  const [rarity, setRarity] = useState<string>("");
+  const [effect, setEffect] = useState<string>("");
+
+  useEffect(() => {
+      setShowingPotions(findPotionByEffect(FilterByLevelRequirement(getPotionsByRarity(potions, rarity), values[0]), effect));
+  }, [values, rarity, effect]);
+
 
   return (
     <>
@@ -26,10 +35,20 @@ function App() {
         </div>
 
         <div className='w-[70%] flex flex-row items-center justify-between mt-5 text-xl font-bold'>
-            <Slider setShowingPotions={setShowingPotions} potions={potions}></Slider>
-            <RarityFilter setShowingPotions={setShowingPotions} potions={potions} showingPotions={showingPotions}></RarityFilter>
-            <EffectFilter setShowingPotions={setShowingPotions} potions={potions}></EffectFilter>
-            <CraftTimeButton showingPotions={showingPotions}></CraftTimeButton>
+            <Slider
+              values={values}
+              setValues={setValues}
+            />
+            <RarityFilter 
+              rarity={rarity}
+              setRarity={setRarity}
+            />
+            <EffectFilter 
+              setEffect={setEffect}
+            />
+            <CraftTimeButton 
+              showingPotions={showingPotions}
+            />
           </div>
       </div>
     </>
