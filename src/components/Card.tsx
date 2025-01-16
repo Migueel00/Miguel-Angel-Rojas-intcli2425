@@ -6,12 +6,12 @@ interface CardProps {
 
 const Card : React.FC<CardProps>  = (potion) => {
     return ( 
-        <div className="w-1/5 ml-1 flex items-center flex-col rounded-md shadow-xl bg-gray-200 mt-5 pb-3">
+        <div className="w-1/6 ml-1 flex items-center flex-col rounded-md shadow-xl bg-gray-200 mt-5 pb-3">
             <div className="w-full">
-                <img className="object-cover w-full h-56 rounded-md" src={potion.potion.image} alt="Converse sneakers" />
+                <img className="object-cover w-full h-56 rounded-md" src={potion.potion.image} alt={potion.potion.name} />
             </div>
             <p className="text-center mt-2 text-orange-400 font-bold">{potion.potion.name}</p>
-            <div className="flex flex-row mt-2">
+            <div className="flex flex-row mt-2 text-sm">
                 <div>
                     <p><span className="font-bold">Rarity:</span> {potion.potion.rarity}</p>
                     <p><span className="font-bold">Boss:</span> {potion.potion.meta.availability.drop_rate.boss}</p>

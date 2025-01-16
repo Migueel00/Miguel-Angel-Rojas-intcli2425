@@ -15,7 +15,7 @@ function App() {
   return (
     <>
       <div className='w-[100%] min-h-screen flex flex-col justify-center items-center'>
-        <div className='w-[90%] flex flex-wrap justify-center items-center '>
+        <div className='w-[90%] min-h-[720px] flex flex-wrap justify-center items-center'>
           {showingPotions.map(potion =>
             <Card potion={potion}></Card>
           )}
